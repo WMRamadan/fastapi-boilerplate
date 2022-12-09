@@ -8,6 +8,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 
 ## Features
 - SQLAlchemy
+- Pydantic
 
 ## ToDo
 - Docker
