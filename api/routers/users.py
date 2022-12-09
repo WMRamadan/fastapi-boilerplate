@@ -1,5 +1,4 @@
-from .. import crud, schemas
-from .. import database
+from .. import crud, schemas, database
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 
