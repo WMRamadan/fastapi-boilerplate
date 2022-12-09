@@ -12,6 +12,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 ## ToDo
 - Docker
 - Celery
+- Tests
 
 ## Quick Start
 1. Clone the repo:
