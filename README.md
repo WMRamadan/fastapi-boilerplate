@@ -14,6 +14,24 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Celery
 - Tests
 
+## File Structure
+```
+.
+├── api
+│   ├── __init__.py
+│   ├── database.py
+│   ├── main.py
+|   ├── models.py
+|   ├── schemas.py
+│   └── routers
+│   │   ├── __init__.py
+│   │   ├── items.py
+│   │   └── users.py
+│   └── helpers
+│       ├── __init__.py
+│       └── crud.py
+```
+
 ## Quick Start
 1. Clone the repo:
     ```bash
