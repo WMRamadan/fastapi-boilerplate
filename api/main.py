@@ -1,6 +1,6 @@
-from fastapi import FastAPI
-from .routers import users, items
 from . import models, database
+from fastapi import FastAPI
+from api.routers import users, items
 
 models.Base.metadata.create_all(bind=database.engine)
 
