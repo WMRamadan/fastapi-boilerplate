@@ -6,6 +6,13 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - python3-virtualenv
 - python3-pip
 
+## Features
+- SQLAlchemy
+
+## ToDo
+- Docker
+- Celery
+
 ## Quick Start
 1. Clone the repo:
     ```bash
