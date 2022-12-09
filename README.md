@@ -61,3 +61,12 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
     # OR
     http://localhost:8000/redoc
     ```
+
+## Contribution
+
+Please submit a pull request for changes you would like to make, with a matching open issue.
+
+Factors that will be considered when new suggestions are proposed:
+1. Simple architecture and structure for beginners to understand.
+2. Docstring code documentation.
+3. FastAPI documention (https://fastapi.tiangolo.com/) guidelines.
