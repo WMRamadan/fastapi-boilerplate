@@ -1,5 +1,5 @@
 from .. import schemas, database
-from api.handlers import crud
+from api.helpers import crud
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
