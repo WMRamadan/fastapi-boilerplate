@@ -86,6 +86,18 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
     http://localhost:8000/redoc
     ```
 
+## Linting
+You can run `pylint` with the following command inside the `fastapi-boilerplate` directory:
+```bash
+pylint --recursive=y api
+```
+
+## Running Tests
+You can run `pytest` with the following command inside the `fastapi-boilerplate` directory:
+```bash
+pytest api/
+```
+
 ## Quick Start (Docker)
 1. Clone the repo:
     ```bash
@@ -108,18 +120,6 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
     # OR
     http://localhost/redoc
     ```
-
-## Linting
-You can run `pylint` with the following command inside the `fastapi-boilerplate` directory:
-```bash
-pylint --recursive=y api
-```
-
-## Running Tests
-You can run `pytest` with the following command inside the `fastapi-boilerplate` directory:
-```bash
-pytest api/
-```
 
 ## Contribution
 
