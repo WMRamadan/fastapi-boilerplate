@@ -89,6 +89,12 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
     http://localhost/redoc
     ```
 
+## Linting
+You can run `pylint` with the following command inside the `fastapi-boilerplate` directory:
+```bash
+pylint --recursive=y api
+```
+
 ## Contribution
 
 Please submit a pull request for changes you would like to make, with a matching open issue.

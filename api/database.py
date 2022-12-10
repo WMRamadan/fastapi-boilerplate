@@ -25,8 +25,11 @@ Base = declarative_base()
 
 # Dependency
 async def get_db():
-    db = SessionLocal()
+    """
+    Gets database session.
+    """
+    db_session = SessionLocal()
     try:
-        yield db
+        yield db_session
     finally:
-        db.close()
+        db_session.close()

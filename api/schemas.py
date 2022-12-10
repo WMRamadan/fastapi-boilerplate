@@ -10,34 +10,58 @@ from pydantic import BaseModel
 
 
 class ItemBase(BaseModel):
+    """
+    Item Base Schema.
+    """
     title: str
     description: str
 
 
 class ItemCreate(ItemBase):
+    """
+    Item Create Schema.
+    """
     pass
 
 
 class Item(ItemBase):
+    """
+    Item Schema.
+    """
     id: int
     owner_id: int
 
     class Config:
+        """
+        Object Relational Mapping Mode.
+        """
         orm_mode = True
 
 
 class UserBase(BaseModel):
+    """
+    User Base Schema.
+    """
     email: str
 
 
 class UserCreate(UserBase):
+    """
+    User Create Schema.
+    """
     password: str
 
 
 class User(UserBase):
+    """
+    User Schema.
+    """
     id: int
     is_active: bool
     items: List[Item] = []
 
     class Config:
+        """
+        Object Relational Mapping Mode.
+        """
         orm_mode = True
