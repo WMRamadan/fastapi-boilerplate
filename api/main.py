@@ -8,9 +8,9 @@
 from fastapi import FastAPI
 from loguru import logger
 from api.routers import users, items, tasks
-from . import models, database
+from . import database
 
-models.Base.metadata.create_all(bind=database.engine)
+database.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
 app.include_router(users.router)
