@@ -3,6 +3,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./api.db"
+#---------------------------------------------------------------------------------------#
+# To use PostgreSQL Database comment the above line and uncomment the line below.
+# Make sure to update the below settings with correct user/password and database address.
+#---------------------------------------------------------------------------------------#
+# SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
