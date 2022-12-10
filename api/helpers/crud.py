@@ -1,10 +1,17 @@
+"""This module is for the helper for all crud operations."""
+#--------------------------------------------#
+# PEP-8 Imports Priority.
+# 1.Standard Library Imports
+# 2.Related Library Imports
+# 3.Local application/library imports
+#--------------------------------------------#
 from sqlalchemy.orm import Session
 from .. import models, schemas
 
 
 def get_user(db: Session, user_id: int):
     """
-    Get user by User ID.
+    Get user by User ID helper.
     :param db: The database session.
     :param user_id: The User ID.
     """
@@ -13,7 +20,7 @@ def get_user(db: Session, user_id: int):
 
 def get_user_by_email(db: Session, email: str):
     """
-    Get user by User email.
+    Get user by User email helper.
     :param db: The database session.
     :param email: The User Email.
     """
@@ -22,7 +29,7 @@ def get_user_by_email(db: Session, email: str):
 
 def get_users(db: Session, skip: int = 0, limit: int = 100):
     """
-    Get all users.
+    Get all users helper.
     :param db: The database session.
     :param skip: The offset used when paging.
     :param limit: The number of users to retrieve per query.
@@ -32,7 +39,7 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 
 def create_user(db: Session, user: schemas.UserCreate):
     """
-    Create user.
+    Create user helper.
     :param db: The database session.
     :param user: The user schema.
     """
@@ -46,7 +53,7 @@ def create_user(db: Session, user: schemas.UserCreate):
 
 def get_items(db: Session, skip: int = 0, limit: int = 100):
     """
-    Get all items.
+    Get all items helper.
     :param db: The database session.
     :param skip: The offset used when paging.
     :param limit: The number of items to retrieve per query.
@@ -56,7 +63,7 @@ def get_items(db: Session, skip: int = 0, limit: int = 100):
 
 def create_user_item(db: Session, item: schemas.ItemCreate, user_id: int):
     """
-    Create the user item.
+    Create the user item helper.
     :param db: The database session.
     :param item: The item schema.
     :param limit: The User ID to add the item to.

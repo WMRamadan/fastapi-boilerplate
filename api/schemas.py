@@ -1,3 +1,10 @@
+"""Pydantic schemas."""
+#--------------------------------------------#
+# PEP-8 Imports Priority.
+# 1.Standard Library Imports
+# 2.Related Library Imports
+# 3.Local application/library imports
+#--------------------------------------------#
 from typing import List
 from pydantic import BaseModel
 

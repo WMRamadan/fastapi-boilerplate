@@ -1,3 +1,10 @@
+"""Database configuration."""
+#--------------------------------------------#
+# PEP-8 Imports Priority.
+# 1.Standard Library Imports
+# 2.Related Library Imports
+# 3.Local application/library imports
+#--------------------------------------------#
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
