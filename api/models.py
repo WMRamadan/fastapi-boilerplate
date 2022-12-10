@@ -22,6 +22,21 @@ class User(Base):
     is_active = Column(Boolean, default=True)
 
     items = relationship("Item", back_populates="owner")
+    tasks = relationship("Task", back_populates="owner")
+
+
+class Task(Base):
+    """
+    Task model.
+    """
+    __tablename__ = "tasks"
+
+    id = Column(Integer, primary_key=True, index=True)
+    time = Column(Integer, index=False)
+    task_id = Column(String, index=False)
+    owner_id = Column(Integer, ForeignKey("users.id"))
+
+    owner = relationship("User", back_populates="tasks")
 
 
 class Item(Base):

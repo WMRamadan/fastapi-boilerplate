@@ -3,3 +3,5 @@ uvicorn[standard]
 sqlalchemy
 pylint
 loguru
+celery
+redis

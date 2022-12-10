@@ -63,3 +63,14 @@ db_session: Session = Depends(database.get_db)):
     :param db_session: The database session.
     """
     return crud.create_user_item(db_session=db_session, item=item, user_id=user_id)
+
+@router.post("/users/{user_id}/tasks/", response_model=schemas.Task)
+async def create_task_for_user(user_id: int, task: schemas.TaskCreate,
+db_session: Session = Depends(database.get_db)):
+    """
+    Create the user task router.
+    :param user_id: The ID of the user.
+    :param task: The task schema.
+    :param db_session: The database session.
+    """
+    return crud.create_user_task(db_session=db_session, task=task, user_id=user_id)

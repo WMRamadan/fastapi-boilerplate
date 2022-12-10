@@ -2,15 +2,24 @@ version: '3'
 
 services:
 
- api-boilerplate:
-   container_name: api-boilerplate
-   build:
-     context: .
-     dockerfile: ./docker/Dockerfile
-   ports:
-     - 80:80
-   volumes:
-     - api-data:/app/api/data
+  api-redis:
+    container_name: api-redis
+    image: redis
+    ports:
+      - 6379:6379
+    restart: always
+
+  api-boilerplate:
+    container_name: api-boilerplate
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - api-data:/app/api/data
+    depends_on:
+     - api-redis
 
 volumes:
   api-data:

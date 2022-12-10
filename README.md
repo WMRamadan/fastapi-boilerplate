@@ -17,9 +17,10 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Pydantic
 - Docker
 - Logging
+- Celery
 
 ## ToDo
-- Celery
+- Run Celery Worker in Docker
 - Tests
 
 ## File Structure
@@ -31,6 +32,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   ├── main.py
 |   ├── models.py
 |   ├── schemas.py
+|   ├── worker.py
 │   └── routers
 │   │   ├── __init__.py
 │   │   ├── items.py
@@ -59,11 +61,22 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
     pip3 install -r requirements.txt
     ```
 
-4. Run the development server:
+4. Run `redis` service required for celery worker:
+    ```bash
+    docker-compose -f docker-compose-services.yml up
+    ```
+
+5. Run `celery` worker:
+    ```bash
+    celery --app=api.worker.celery worker --loglevel=info --logfile=celery.log
+    ```
+
+6. Run the development server:
     ```bash
     uvicorn api.main:app --reload
     ```
-5. View the API docs:
+
+7. View the API docs:
     ```bash
     http://localhost:8000/docs
     # OR

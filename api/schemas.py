@@ -9,6 +9,35 @@ from typing import List
 from pydantic import BaseModel
 
 
+class TaskBase(BaseModel):
+    """
+    Task Base Schema.
+    """
+    time: int
+
+
+class TaskCreate(TaskBase):
+    """
+    Task Create Schema.
+    """
+    pass
+
+
+class Task(TaskBase):
+    """
+    Task Schema.
+    """
+    id: int
+    task_id: str
+    owner_id: int
+
+    class Config:
+        """
+        Object Relational Mapping Mode.
+        """
+        orm_mode = True
+
+
 class ItemBase(BaseModel):
     """
     Item Base Schema.
@@ -59,6 +88,7 @@ class User(UserBase):
     id: int
     is_active: bool
     items: List[Item] = []
+    tasks: List[Task] = []
 
     class Config:
         """

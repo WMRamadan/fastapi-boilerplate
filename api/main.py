@@ -7,7 +7,7 @@
 #--------------------------------------------#
 from fastapi import FastAPI
 from loguru import logger
-from api.routers import users, items
+from api.routers import users, items, tasks
 from . import models, database
 
 models.Base.metadata.create_all(bind=database.engine)
@@ -15,6 +15,7 @@ models.Base.metadata.create_all(bind=database.engine)
 app = FastAPI()
 app.include_router(users.router)
 app.include_router(items.router)
+app.include_router(tasks.router)
 
 logger.add("log_api.log", rotation="100 MB")    # Automatically rotate log file
 

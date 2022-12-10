@@ -5,8 +5,9 @@
 # 2.Related Library Imports
 # 3.Local application/library imports
 #--------------------------------------------#
+from celery.result import AsyncResult
 from sqlalchemy.orm import Session
-from .. import models, schemas
+from .. import models, schemas, worker
 
 
 def get_user(db_session: Session, user_id: int):
@@ -66,10 +67,49 @@ def create_user_item(db_session: Session, item: schemas.ItemCreate, user_id: int
     Create the user item helper.
     :param db_session: The database session.
     :param item: The item schema.
-    :param limit: The User ID to add the item to.
+    :param user_id: The User ID to add the item to.
     """
     db_item = models.Item(**item.dict(), owner_id=user_id)
     db_session.add(db_item)
     db_session.commit()
     db_session.refresh(db_item)
     return db_item
+
+
+def create_user_task(db_session: Session, task: schemas.TaskCreate, user_id: int):
+    """
+    Create the user task helper.
+    :param db_session: The database session.
+    :param task: The task schema.
+    :param user_id: The User ID to add the item to.
+    """
+    task_run = worker.run_task.delay(task.time)
+    print(task_run)
+    db_task = models.Task(**task.dict(), task_id=task_run.id, owner_id=user_id)
+    db_session.add(db_task)
+    db_session.commit()
+    db_session.refresh(db_task)
+    print(type(db_task))
+    return db_task
+
+def get_tasks(db_session: Session, skip: int = 0, limit: int = 100):
+    """
+    Get all tasks helper.
+    :param db_session: The database session.
+    :param skip: The offset used when paging.
+    :param limit: The number of tasks to retrieve per query.
+    """
+    return db_session.query(models.Task).offset(skip).limit(limit).all()
+
+def get_task(task_id: int):
+    """
+    Get task by ID helper.
+    :param task_id: The of the task.
+    """
+    task_result = AsyncResult(task_id)
+    result = {
+        "task_id": task_id,
+        "task_status": task_result.status,
+        "task_result": task_result.result
+    }
+    return result
