@@ -5,3 +5,5 @@ pylint
 loguru
 celery
 redis
+pytest
+httpx

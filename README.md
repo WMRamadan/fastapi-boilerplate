@@ -18,10 +18,10 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Docker
 - Logging
 - Celery
+- Tests
 
 ## ToDo
 - Run Celery Worker in Docker
-- Tests
 
 ## File Structure
 ```
@@ -38,8 +38,11 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   │   ├── items.py
 │   │   └── users.py
 │   └── helpers
-│       ├── __init__.py
-│       └── crud.py
+│   │   ├── __init__.py
+│   │   └── crud.py
+│   └── tests
+│   │   ├── __init__.py
+│   │   └── test_main.py
 ├── docker
 │   └── Dockerfile
 ```
@@ -110,6 +113,12 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 You can run `pylint` with the following command inside the `fastapi-boilerplate` directory:
 ```bash
 pylint --recursive=y api
+```
+
+## Running Tests
+You can run `pytest` with the following command inside the `fastapi-boilerplate` directory:
+```bash
+pytest api/
 ```
 
 ## Contribution
