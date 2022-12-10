@@ -12,11 +12,11 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - SQLAlchemy
 - Pydantic
 - Docker
+- Logging
 
 ## ToDo
 - Celery
 - Tests
-- Logging
 
 ## File Structure
 ```
