@@ -7,7 +7,8 @@
 #--------------------------------------------#
 from celery.result import AsyncResult
 from sqlalchemy.orm import Session
-from .. import models, schemas, worker
+from .. import models, worker
+from api.schemas import items_schema, tasks_schema, users_schema
 
 
 def get_user(db_session: Session, user_id: int):
@@ -38,7 +39,7 @@ def get_users(db_session: Session, skip: int = 0, limit: int = 100):
     return db_session.query(models.User).offset(skip).limit(limit).all()
 
 
-def create_user(db_session: Session, user: schemas.UserCreate):
+def create_user(db_session: Session, user: users_schema.UserCreate):
     """
     Create user helper.
     :param db_session: The database session.
@@ -62,7 +63,7 @@ def get_items(db_session: Session, skip: int = 0, limit: int = 100):
     return db_session.query(models.Item).offset(skip).limit(limit).all()
 
 
-def create_user_item(db_session: Session, item: schemas.ItemCreate, user_id: int):
+def create_user_item(db_session: Session, item: items_schema.ItemCreate, user_id: int):
     """
     Create the user item helper.
     :param db_session: The database session.
@@ -76,7 +77,7 @@ def create_user_item(db_session: Session, item: schemas.ItemCreate, user_id: int
     return db_item
 
 
-def create_user_task(db_session: Session, task: schemas.TaskCreate, user_id: int):
+def create_user_task(db_session: Session, task: tasks_schema.TaskCreate, user_id: int):
     """
     Create the user task helper.
     :param db_session: The database session.

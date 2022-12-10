@@ -31,8 +31,12 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   ├── database.py
 │   ├── main.py
 |   ├── models.py
-|   ├── schemas.py
 |   ├── worker.py
+│   └── schemas
+│   │   ├── __init__.py
+│   │   ├── items_schema.py
+│   │   └── tasks_schema.py
+│   │   └── users_schema.py
 │   └── routers
 │   │   ├── __init__.py
 │   │   ├── items.py

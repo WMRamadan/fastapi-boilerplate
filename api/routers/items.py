@@ -9,13 +9,14 @@ from typing import List
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from api.helpers import crud
-from .. import schemas, database
+from .. import database
+from api.schemas import items_schema
 
 
 router = APIRouter()
 
 
-@router.get("/items/", response_model=List[schemas.Item])
+@router.get("/items/", response_model=List[items_schema.Item])
 async def read_items(skip: int = 0, limit: int = 100,
 db_session: Session = Depends(database.get_db)):
     """
