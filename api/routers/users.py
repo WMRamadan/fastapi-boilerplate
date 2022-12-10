@@ -1,4 +1,5 @@
 from .. import schemas, database
+from typing import List
 from api.helpers import crud
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
@@ -14,7 +15,7 @@ async def create_user(user: schemas.UserCreate, db: Session = Depends(database.g
     return crud.create_user(db=db, user=user)
 
 
-@router.get("/users/", response_model=list[schemas.User])
+@router.get("/users/", response_model=List[schemas.User])
 async def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(database.get_db)):
     users = crud.get_users(db, skip=skip, limit=limit)
     return users
