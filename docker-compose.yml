@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+ api-boilerplate:
+   container_name: api-boilerplate
+   build:
+     context: .
+     dockerfile: ./docker/Dockerfile
+   ports:
+     - 80:80
+   volumes:
+     - api-data:/app/api/data
+
+volumes:
+  api-data:

@@ -5,13 +5,15 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Python3
 - python3-virtualenv
 - python3-pip
+- Docker
+- Docker-compose
 
 ## Features
 - SQLAlchemy
 - Pydantic
+- Docker
 
 ## ToDo
-- Docker
 - Celery
 - Tests
 - Logging
@@ -32,9 +34,11 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   └── helpers
 │       ├── __init__.py
 │       └── crud.py
+├── docker
+│   └── Dockerfile
 ```
 
-## Quick Start
+## Quick Start (Local)
 1. Clone the repo:
     ```bash
     git clone https://github.com/WMRamadan/fastapi-boilerplate
@@ -60,6 +64,29 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
     http://localhost:8000/docs
     # OR
     http://localhost:8000/redoc
+    ```
+
+## Quick Start (Docker)
+1. Clone the repo:
+    ```bash
+    git clone https://github.com/WMRamadan/fastapi-boilerplate
+    cd fastapi-boilerplate
+    ```
+2. Build:
+    ```bash
+    docker-compose build
+    ```
+
+3. Run the app:
+    ```bash
+    docker-compose up
+    ```
+
+4. View the API docs:
+    ```bash
+    http://localhost/docs
+    # OR
+    http://localhost/redoc
     ```
 
 ## Contribution
