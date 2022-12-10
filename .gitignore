@@ -134,6 +134,3 @@ dmypy.json
 
 # Database files
 *.db
-
-# Linters
-.pylintrc
