@@ -1,4 +1,4 @@
-"""This module is for the helper for all crud operations."""
+"""This module is the helper for all crud operations."""
 #--------------------------------------------#
 # PEP-8 Imports Priority.
 # 1.Standard Library Imports
