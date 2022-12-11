@@ -6,7 +6,7 @@
 # 3.Local application/library imports
 #--------------------------------------------#
 import os
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI
 from loguru import logger
 from api.routers import async_router, users, items, tasks
 from . import database
@@ -22,6 +22,9 @@ app.include_router(tasks.router)
 logger.add("log_api.log", rotation="100 MB")    # Automatically rotate log file
 
 def get_info():
+    """
+    Info function.
+    """
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     with open(os.path.join(BASE_DIR, 'VERSION'), 'r') as fh:
         version = fh.read().strip()

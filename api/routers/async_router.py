@@ -7,7 +7,6 @@
 #--------------------------------------------#
 import time
 import asyncio
-from typing import List
 from fastapi import APIRouter
 from api.helpers import async_helper
 
@@ -20,11 +19,11 @@ async def root():
     Async router.
     """
     start = time.time()
-    a,b = await asyncio.gather(*[async_helper.async_func_a(2), async_helper.async_func_b(4)])
+    async_a, async_b = await asyncio.gather(*[async_helper.async_func_a(2), async_helper.async_func_b(4)])
     end = time.time()
     result = {
-        "async_func_a": a,
-        "async_func_b": b,
+        "async_func_a": async_a,
+        "async_func_b": async_b,
         "async_total_time": "All functions took {} seconds.".format(round(end-start))
     }
     return result

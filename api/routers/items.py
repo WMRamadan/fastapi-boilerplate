@@ -9,8 +9,8 @@ from typing import List
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from api.helpers import crud
-from .. import database
 from api.schemas import items_schema
+from .. import database
 
 
 router = APIRouter()

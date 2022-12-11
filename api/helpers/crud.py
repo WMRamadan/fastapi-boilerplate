@@ -8,9 +8,9 @@
 from typing import List
 from celery.result import AsyncResult
 from sqlalchemy.orm import Session
-from .. import worker
 from api.models import user_model, item_model, task_model
 from api.schemas import items_schema, tasks_schema, users_schema
+from .. import worker
 
 
 def get_user(db_session: Session, user_id: int):
