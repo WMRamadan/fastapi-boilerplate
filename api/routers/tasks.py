@@ -17,7 +17,7 @@ router = APIRouter()
 
 
 @router.get("/tasks/", response_model=List[tasks_schema.Task])
-async def read_tasks(skip: int = 0, limit: int = 100,
+def read_tasks(skip: int = 0, limit: int = 100,
 db_session: Session = Depends(database.get_db)):
     """
     Get all tasks router.
@@ -31,7 +31,7 @@ db_session: Session = Depends(database.get_db)):
     return tasks
 
 @router.get("/tasks/{task_id}")
-async def read_task(task_id: str):
+def read_task(task_id: str):
     """
     Get task by User ID router.
     :param task_id: The Task ID.

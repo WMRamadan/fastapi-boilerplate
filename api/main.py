@@ -5,9 +5,12 @@
 # 2.Related Library Imports
 # 3.Local application/library imports
 #--------------------------------------------#
+import time
+import asyncio
 from fastapi import FastAPI
 from loguru import logger
 from api.routers import users, items, tasks
+from api.helpers import async_helper
 from . import database
 
 database.Base.metadata.create_all(bind=database.engine)
@@ -26,4 +29,13 @@ async def root():
     Root router.
     """
     logger.info("this is a info line")
-    return {"message": "Hello to the FastAPI Boilerplate!"}
+    start = time.time()
+    a,b = await asyncio.gather(*[async_helper.async_func_a(2), async_helper.async_func_b(4)])
+    end = time.time()
+    result = {
+        "message": "Hello from the FastAPI Boilerplate!",
+        "async_func_a": a,
+        "async_func_b": b,
+        "async_total_time": "All functions took {} seconds.".format(round(end-start))
+    }
+    return result

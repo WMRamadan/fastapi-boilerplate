@@ -17,7 +17,7 @@ router = APIRouter()
 
 
 @router.post("/users/", response_model=users_schema.User)
-async def create_user(user: users_schema.UserCreate, db_session: Session = Depends(database.get_db)):
+def create_user(user: users_schema.UserCreate, db_session: Session = Depends(database.get_db)):
     """
     Create user router.
     :param user: The user schema.
@@ -30,7 +30,7 @@ async def create_user(user: users_schema.UserCreate, db_session: Session = Depen
 
 
 @router.get("/users/", response_model=List[users_schema.User])
-async def read_users(skip: int = 0, limit: int = 100,
+def read_users(skip: int = 0, limit: int = 100,
 db_session: Session = Depends(database.get_db)):
     """
     Get all users router.
@@ -45,7 +45,7 @@ db_session: Session = Depends(database.get_db)):
 
 
 @router.get("/users/{user_id}", response_model=users_schema.User)
-async def read_user(user_id: int, db_session: Session = Depends(database.get_db)):
+def read_user(user_id: int, db_session: Session = Depends(database.get_db)):
     """
     Get user by User ID router.
     :param user_id: The User ID.
@@ -58,7 +58,7 @@ async def read_user(user_id: int, db_session: Session = Depends(database.get_db)
 
 
 @router.post("/users/{user_id}/items/", response_model=items_schema.Item)
-async def create_item_for_user(user_id: int, item: items_schema.ItemCreate,
+def create_item_for_user(user_id: int, item: items_schema.ItemCreate,
 db_session: Session = Depends(database.get_db)):
     """
     Create the user item router.
@@ -69,7 +69,7 @@ db_session: Session = Depends(database.get_db)):
     return crud.create_user_item(db_session=db_session, item=item, user_id=user_id)
 
 @router.post("/users/{user_id}/tasks/", response_model=tasks_schema.Task)
-async def create_task_for_user(user_id: int, task: tasks_schema.TaskCreate,
+def create_task_for_user(user_id: int, task: tasks_schema.TaskCreate,
 db_session: Session = Depends(database.get_db)):
     """
     Create the user task router.

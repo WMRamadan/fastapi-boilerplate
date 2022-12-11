@@ -17,7 +17,7 @@ router = APIRouter()
 
 
 @router.get("/items/", response_model=List[items_schema.Item])
-async def read_items(skip: int = 0, limit: int = 100,
+def read_items(skip: int = 0, limit: int = 100,
 db_session: Session = Depends(database.get_db)):
     """
     Get all items router.
