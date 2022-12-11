@@ -24,6 +24,17 @@ main.app.dependency_overrides[get_db] = override_get_db
 
 client = TestClient(main.app)
 
+def _create_user(test_db):
+    """
+    Create user.
+    """
+    response = client.post(
+        "/users/",
+        # headers={"X-Token": "coneofsilence"},
+        json={"email": "testing@email.com", "password": "testpwd123"},
+    )
+    return response
+
 def test_root():
     """
     Test root route.
@@ -32,15 +43,22 @@ def test_root():
     assert response.status_code == 200
     assert response.json() == {"message": "Hello from the FastAPI Boilerplate!"}
 
+def test_health():
+    """
+    Test health route.
+    """
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "ok",
+        "info": main.get_info()
+        }
+
 def test_create_user(test_db):
     """
     Test create user.
     """
-    response = client.post(
-        "/users/",
-        # headers={"X-Token": "coneofsilence"},
-        json={"email": "testing@email.com", "password": "testpwd123"},
-    )
+    response = _create_user(test_db)
     assert response.status_code == 200
     assert response.json() == {
     "email": "testing@email.com",
@@ -49,3 +67,18 @@ def test_create_user(test_db):
     "items": [ ],
     "tasks": [ ]
     }
+
+def test_get_users(test_db):
+    """
+    Test get users.
+    """
+    _create_user(test_db)
+    response = client.get("/users/")
+    assert response.status_code == 200
+    assert response.json() == [{
+    "email": "testing@email.com",
+    "id": 1,
+    "is_active": True,
+    "items": [ ],
+    "tasks": [ ]
+    }]
