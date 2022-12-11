@@ -137,10 +137,4 @@ pytest api/
 
 ## Contribution
 
-Please submit a pull request for changes you would like to make, with a matching open issue.
-
-Factors that will be considered when new suggestions are proposed:
-1. Simple architecture and structure for beginners to understand.
-2. Docstring code documentation.
-3. FastAPI documention (https://fastapi.tiangolo.com/) guidelines.
-4. PEP-8 guidelines (https://peps.python.org/pep-0008/).
+Please check our [Contributing Guide](./CONTRIBUTING.md) on how you can contribute.
