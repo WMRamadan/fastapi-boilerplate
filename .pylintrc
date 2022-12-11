@@ -1,2 +1,2 @@
 [MASTER]
-extension-pkg-whitelist=pydantic
+extension-pkg-allow-list=pydantic
