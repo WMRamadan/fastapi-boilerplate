@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI image"/>
+    <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI image"/>
+</p>
+<p align="center">
+    <img src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue" alt="Supported Python versions">
 </p>
 
 # FastAPI Boilerplate
