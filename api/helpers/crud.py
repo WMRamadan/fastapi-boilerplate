@@ -5,6 +5,7 @@
 # 2.Related Library Imports
 # 3.Local application/library imports
 #--------------------------------------------#
+from typing import List
 from celery.result import AsyncResult
 from sqlalchemy.orm import Session
 from .. import worker
@@ -30,7 +31,7 @@ def get_user_by_email(db_session: Session, email: str):
     return db_session.query(user_model.User).filter(user_model.User.email == email).first()
 
 
-def get_users(db_session: Session, skip: int = 0, limit: int = 100):
+def get_users(db_session: Session, skip: int = 0, limit: int = 100) -> List:
     """
     Get all users helper.
     :param db_session: The database session.
@@ -94,7 +95,7 @@ def create_user_task(db_session: Session, task: tasks_schema.TaskCreate, user_id
     print(type(db_task))
     return db_task
 
-def get_tasks(db_session: Session, skip: int = 0, limit: int = 100):
+def get_tasks(db_session: Session, skip: int = 0, limit: int = 100) -> List:
     """
     Get all tasks helper.
     :param db_session: The database session.
@@ -103,7 +104,7 @@ def get_tasks(db_session: Session, skip: int = 0, limit: int = 100):
     """
     return db_session.query(task_model.Task).offset(skip).limit(limit).all()
 
-def get_task(task_id: int):
+def get_task(task_id: str):
     """
     Get task by ID helper.
     :param task_id: The of the task.
