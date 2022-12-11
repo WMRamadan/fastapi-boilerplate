@@ -39,6 +39,8 @@ db_session: Session = Depends(database.get_db)):
     :param db_session: The database session.
     """
     users = crud.get_users(db_session, skip=skip, limit=limit)
+    if not users:
+        raise HTTPException(status_code=404, detail="No users found")
     return users
 
 

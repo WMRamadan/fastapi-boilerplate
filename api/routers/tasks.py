@@ -6,7 +6,7 @@
 # 3.Local application/library imports
 #--------------------------------------------#
 from typing import List
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from api.helpers import crud
 from .. import database
@@ -26,6 +26,8 @@ db_session: Session = Depends(database.get_db)):
     :param db: The database session.
     """
     tasks = crud.get_tasks(db_session, skip=skip, limit=limit)
+    if not tasks:
+        raise HTTPException(status_code=404, detail="No tasks found")
     return tasks
 
 @router.get("/tasks/{task_id}")
