@@ -67,6 +67,11 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   └── Dockerfile
 ```
 
+## Environment Variables
+- SQLALCHEMY_DATABASE_URL - Database URL used, can be either SQLite or PostgreSQL.
+- CELERY_CONF_BROKER_URL - Celery redis broker URL.
+- CELERY_CONF_RESULT_BACKEND - Celery redis result backend.
+
 ## Quick Start (Local)
 1. Clone the repo:
     ```bash
