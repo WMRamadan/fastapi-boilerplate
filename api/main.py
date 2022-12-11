@@ -7,6 +7,7 @@
 #--------------------------------------------#
 import os
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from api.routers import async_router, users, items, tasks
 from . import database
@@ -14,6 +15,17 @@ from . import database
 database.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI(debug=True)
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(async_router.router)
 app.include_router(users.router)
 app.include_router(items.router)
