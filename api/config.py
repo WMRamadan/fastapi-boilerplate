@@ -5,12 +5,17 @@
 # 2.Related Library Imports
 # 3.Local application/library imports
 #--------------------------------------------#
-import os
 from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
+    """
+    Settings class.
+    """
     SQLALCHEMY_DATABASE_URL: str
 
     class Config:
+        """
+        Config class.
+        """
         env_file = ".env.example"

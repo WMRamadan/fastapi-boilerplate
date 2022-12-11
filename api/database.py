@@ -14,6 +14,9 @@ from . import config
 
 @lru_cache()
 def get_settings():
+    """
+    Config settings function.
+    """
     return config.Settings()
 
 conf_settings = get_settings()
