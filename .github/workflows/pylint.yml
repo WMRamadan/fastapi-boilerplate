@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.8", "3.9", "3.10"]
@@ -21,4 +21,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Analysing the code with pylint
       run: |
-        pylint --recursive=y api
+        pylint --recursive=y api --rcfile=.pylintrc
