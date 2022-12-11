@@ -9,8 +9,7 @@ from typing import List
 from sqlalchemy.orm import Session
 from api.models import user_model, item_model, task_model
 from api.schemas import items_schema, tasks_schema, users_schema
-from api.worker import celery
-from .. import worker
+from api.worker import celery, run_task
 
 
 def get_user(db_session: Session, user_id: int):
@@ -86,13 +85,11 @@ def create_user_task(db_session: Session, task: tasks_schema.TaskCreate, user_id
     :param task: The task schema.
     :param user_id: The User ID to add the item to.
     """
-    task_run = worker.run_task.delay(task.time)
-    print(task_run)
+    task_run = run_task.delay(task.time)
     db_task = task_model.Task(**task.dict(), task_id=task_run.id, owner_id=user_id)
     db_session.add(db_task)
     db_session.commit()
     db_session.refresh(db_task)
-    print(type(db_task))
     return db_task
 
 def get_tasks(db_session: Session, skip: int = 0, limit: int = 100) -> List:
