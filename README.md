@@ -2,6 +2,9 @@
     <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI image"/>
 </p>
 <p align="center">
+    <a href="https://github.com/WMRamadan/fastapi-boilerplate/actions/workflows/python-app.yml" target="_blank">
+    <img src="https://github.com/wmramadan/fastapi-boilerplate/actions/workflows/python-app.yml/badge.svg" alt="Test">
+    </a>
     <img src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue" alt="Supported Python versions">
 </p>
 
