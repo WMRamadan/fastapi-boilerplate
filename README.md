@@ -19,9 +19,9 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Logging
 - Celery
 - Tests
+- Config
 
 ## ToDo
-- Config
 - Run Celery Worker in Docker
 
 ## File Structure
@@ -29,6 +29,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 .
 ├── api
 │   ├── __init__.py
+│   ├── config.py
 │   ├── database.py
 │   ├── main.py
 |   ├── worker.py
@@ -44,7 +45,9 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   │   └── users_schema.py
 │   └── routers
 │   │   ├── __init__.py
+│   │   ├── async_router.py
 │   │   ├── items.py
+│   │   ├── tasks.py
 │   │   └── users.py
 │   └── helpers
 │   │   ├── __init__.py
@@ -52,6 +55,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   │   └── crud.py
 │   └── tests
 │   │   ├── __init__.py
+│   │   ├── db.py
 │   │   └── test_main.py
 ├── docker
 │   └── Dockerfile

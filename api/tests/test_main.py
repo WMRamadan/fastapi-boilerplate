@@ -30,7 +30,7 @@ def test_root():
     """
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Hello to the FastAPI Boilerplate!"}
+    assert response.json() == {"message": "Hello from the FastAPI Boilerplate!"}
 
 def test_create_user(test_db):
     """

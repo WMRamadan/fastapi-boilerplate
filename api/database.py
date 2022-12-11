@@ -5,16 +5,20 @@
 # 2.Related Library Imports
 # 3.Local application/library imports
 #--------------------------------------------#
+from functools import lru_cache
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from . import config
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./api.db"
-#---------------------------------------------------------------------------------------#
-# To use PostgreSQL Database comment the above line and uncomment the line below.
-# Make sure to update the below settings with correct user/password and database address.
-#---------------------------------------------------------------------------------------#
-# SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
+
+@lru_cache()
+def get_settings():
+    return config.Settings()
+
+conf_settings = get_settings()
+
+SQLALCHEMY_DATABASE_URL = conf_settings.SQLALCHEMY_DATABASE_URL
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
