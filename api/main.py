@@ -6,25 +6,32 @@
 # 3.Local application/library imports
 #--------------------------------------------#
 import os
+from functools import lru_cache
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from api.routers import async_router, users, items, tasks
-from . import database
+from . import database, config
 
 database.Base.metadata.create_all(bind=database.engine)
 
-app = FastAPI(debug=True)
-origins = [
-    "http://localhost",
-    "http://localhost:8000",
-]
+@lru_cache()
+def get_settings():
+    """
+    Config settings function.
+    """
+    return config.Settings()
+
+conf_settings = get_settings()
+
+app = FastAPI(debug=conf_settings.APP_DEBUG)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=conf_settings.ALLOWED_ORIGINS,
+    allow_credentials=conf_settings.ALLOW_CREDENTIALS,
+    allow_methods=conf_settings.ALLOW_METHODS,
+    allow_headers=conf_settings.ALLOW_HEADERS,
 )
 app.include_router(async_router.router)
 app.include_router(users.router)
