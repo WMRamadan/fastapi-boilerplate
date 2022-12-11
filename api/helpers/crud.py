@@ -6,10 +6,10 @@
 # 3.Local application/library imports
 #--------------------------------------------#
 from typing import List
-from celery.result import AsyncResult
 from sqlalchemy.orm import Session
 from api.models import user_model, item_model, task_model
 from api.schemas import items_schema, tasks_schema, users_schema
+from api.worker import celery
 from .. import worker
 
 
@@ -109,7 +109,7 @@ def get_task(task_id: str):
     Get task by ID helper.
     :param task_id: The of the task.
     """
-    task_result = AsyncResult(task_id)
+    task_result = celery.AsyncResult(task_id)
     result = {
         "task_id": task_id,
         "task_status": task_result.status,
