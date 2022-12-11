@@ -75,7 +75,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 
 4. Run `redis` service required for celery worker:
     ```bash
-    docker-compose -f docker-compose-services.yml up
+    docker-compose -f docker-compose-services.yml up -d
     ```
 
 5. Run `celery` worker:
