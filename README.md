@@ -71,6 +71,11 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - SQLALCHEMY_DATABASE_URL - Database URL used, can be either SQLite or PostgreSQL.
 - CELERY_CONF_BROKER_URL - Celery redis broker URL.
 - CELERY_CONF_RESULT_BACKEND - Celery redis result backend.
+- ALLOWED_ORIGINS - A list of origins that should be permitted to make cross-origin requests.
+- ALLOW_CREDENTIALS - Allowed credentials `bool` for CORS middelware.
+- ALLOW_METHODS - Allowed methods ['GET','POST','PUT','PATCH','DELETE','OPTIONS'] for CORS middleware.
+- ALLOW_HEADERS - A list of HTTP request headers that should be supported for cross-origin requests.
+- APP_DEBUG - Set app debug mode `bool` value.
 
 ## Quick Start (Local)
 1. Clone the repo:
