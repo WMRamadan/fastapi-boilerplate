@@ -30,8 +30,8 @@ Key deliverables for 1.0 release.
 
 | Priority | Scenario | Description | State |
 | --- | --- | --- | --- |
-| P0 | Initial Framework | Issues: #0<br> Commit: #29a303e | Done |
-| P1 | Formatting & Structure | Issues: #0<br> Commit: #178c0c0 | Done |
-| P1 | async, schemas, models, db, linting, env, worker, CI/CD, config | Issues: #0<br> Commit: #665038d | Done |
-| P1 | CORS, Repo Cleanup | Issues: #0<br> Commit: #8c8d603<br> PR: [#4] | Done |
-| P2 | Worker Scaling | Issues: #0 | On Hold |
+| P0 | Initial Framework | Initial Framework Skeleton.<br><br>Issues: #0<br> Commit: #29a303e | Done |
+| P1 | Formatting & Structure | Implement correct production ready structure and formating. PEP-8 Compliance, Code documenation and Linting.<br><br>Issues: #0<br> Commit: #178c0c0 | Done |
+| P1 | async, schemas, models, db, linting, env, worker, CI/CD, config | Provide async, schema, and model examples. Implement worker, env, db CI/CD, and config templates.<br><br>Issues: #0<br> Commit: #665038d | Done |
+| P1 | CORS, Repo Cleanup | Provide CORS middleware.<br><br>Issues: #0<br> Commit: #8c8d603<br> PR: [#4] | Done |
+| P2 | Worker Scaling | Implement celery worker scaling through docker.<br><br>Issues: #0 | On Hold |
