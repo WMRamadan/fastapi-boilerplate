@@ -8,13 +8,7 @@ The project will be updated in 6 week milestones.
 
 | Duration | Activity | Release |
 | --- | --- | --- |
-| 1 week | SQLAlchemy | v0.0.1 |
-| 1 week | Pydantic | v0.0.1 |
-| 1 week | Docker | v0.0.1 |
-| 1 week | Logging | v0.0.1 |
-| 1 week | Celery | v0.0.1 |
-| 1 week | Tests | v0.0.1 |
-| 1 week | Config | v0.0.1 |
+| 1 week | <li>SQLAlchemy</li><li>Pydantic</li><li>Docker</li> <li>Logging</li><li>Celery</li><li>Tests</li><li>Config</li>| v0.0.1 |
 
 ## Timeline
 
