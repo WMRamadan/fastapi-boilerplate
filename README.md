@@ -28,7 +28,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Config
 
 ## ToDo
-- Run Celery Worker in Docker
+- Version 1.0 [Roadmap](./docs/v1-roadmap.md)
 
 ## File Structure
 ```
