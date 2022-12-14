@@ -33,5 +33,5 @@ Key deliverables for 1.0 release.
 | P0 | Initial Framework | Issues: #0<br> Commit: #29a303e | Done |
 | P1 | Formatting & Structure | Issues: #0<br> Commit: #178c0c0 | Done |
 | P1 | async, schemas, models, db, linting, env, worker, CI/CD, config | Issues: #0<br> Commit: #665038d | Done |
-| P1 | CORS, Repo Cleanup | Issues: #0<br> Commit: #8c8d603 | Done |
+| P1 | CORS, Repo Cleanup | Issues: #0<br> Commit: #8c8d603<br> PR: [#4] | Done |
 | P2 | Worker Scaling | Issues: #0 | On Hold |
