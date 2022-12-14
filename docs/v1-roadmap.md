@@ -4,7 +4,7 @@ This document outlines the roadmap for version 1.0.
 
 ## Milestones
 
-The project will be updated in 6 week milestones.
+The project will be updated in 1 week milestones.
 
 | Duration | Activity | Release |
 | --- | --- | --- |
@@ -14,11 +14,7 @@ The project will be updated in 6 week milestones.
 
 | Milestone End Date | Milestone Name |
 | --- | --- |
-| 08-12-2022 | Stage 1 |
-| 09-12-2022 | Stage 2 |
-| 10-12-2022 | Stage 3 |
-| 11-12-2022 | Stage 4 |
-| 12-12-2022 | Stage 5 |
+| 12-12-2022 | Stage 1 |
 
 ## Prioritization
 
