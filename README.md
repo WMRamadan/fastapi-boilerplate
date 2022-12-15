@@ -154,4 +154,4 @@ pytest api/
 
 ## Contribution
 
-Please check our [Contributing Guide](./CONTRIBUTING.md) on how you can contribute.
+Please check our [Contributing Guide](./docs/CONTRIBUTING.md) on how you can contribute.
