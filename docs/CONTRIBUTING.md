@@ -13,7 +13,7 @@ To get an overview of the project, read the [README](README.md). All contributio
 
 ## Getting started
 
-It is very simple to contribute, we accept all kinds of contributions.
+It is very simple to contribute, we accept all kinds of contributions. All PR's will be reviewed according to the [Code Review Guidelines](./docs/code-review-guidelines.md).
 
 ## Issues
 
