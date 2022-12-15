@@ -4,7 +4,7 @@ Thank you for investing your time in contributing to our project! Any contributi
 
 ## New contributor guide
 
-To get an overview of the project, read the [README](README.md). All contributions will have to consider the following:
+To get an overview of the project, read the [README](../README.md). All contributions will have to consider the following:
 
 1. Simple architecture and structure for beginners to understand.
 2. Docstring code documentation.
@@ -13,7 +13,7 @@ To get an overview of the project, read the [README](README.md). All contributio
 
 ## Getting started
 
-It is very simple to contribute, we accept all kinds of contributions. All PR's will be reviewed according to the [Code Review Guidelines](./docs/code-review-guidelines.md).
+It is very simple to contribute, we accept all kinds of contributions. All PR's will be reviewed according to the [Code Review Guidelines](./code-review-guidelines.md).
 
 ## Issues
 
