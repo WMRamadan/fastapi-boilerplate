@@ -1,6 +1,6 @@
 # Code Review Guidelines
 
-This is a guide for how to conduct code reviews for each PR made.
+This is a guide describes how to code reviews will be conducted for each PR made.
 
 ## Process of Reviewer
 
