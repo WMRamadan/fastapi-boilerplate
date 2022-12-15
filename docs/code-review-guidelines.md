@@ -1,6 +1,6 @@
 # Code Review Guidelines
 
-This is a guide describes how to code reviews will be conducted for each PR made.
+This is a guide describes how the code review will be conducted for each PR made.
 
 ## Process of Reviewer
 
@@ -17,6 +17,6 @@ This is a guide describes how to code reviews will be conducted for each PR made
 
 1. Respect the Reviewer
 2. Provide Constructive Feedback
-3. Keep you Ego out of the Code
+3. Keep your Ego out of the Code
 4. Be as precise as possible
  
