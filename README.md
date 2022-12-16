@@ -78,6 +78,24 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - ALLOW_HEADERS - A list of HTTP request headers that should be supported for cross-origin requests.
 - APP_DEBUG - Set app debug mode `bool` value.
 
+## Updating Changelog
+You can run `git-changelog.sh` bash script to update the [CHANGELOG](./CHANGELOG.md) file using the following command:
+```bash
+bash git-changelog.sh > CHANGELOG.md
+```
+
+## Linting
+You can run `pylint` with the following command inside the `fastapi-boilerplate` directory:
+```bash
+pylint --recursive=y api
+```
+
+## Running Tests
+You can run `pytest` with the following command inside the `fastapi-boilerplate` directory:
+```bash
+pytest api/
+```
+
 ## Quick Start (Local)
 1. Clone the repo:
     ```bash
@@ -116,18 +134,6 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
     # OR
     http://localhost:8000/redoc
     ```
-
-## Linting
-You can run `pylint` with the following command inside the `fastapi-boilerplate` directory:
-```bash
-pylint --recursive=y api
-```
-
-## Running Tests
-You can run `pytest` with the following command inside the `fastapi-boilerplate` directory:
-```bash
-pytest api/
-```
 
 ## Quick Start (Docker)
 1. Clone the repo:
