@@ -7,3 +7,5 @@ celery==5.2.7
 redis==4.4.0
 pytest==7.2.0
 httpx==0.23.1
+sse-starlette==1.2.1
+asyncio==3.4.3
