@@ -27,6 +27,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Celery
 - Tests
 - Config
+- SSE
 
 ## ToDo
 - Version 1.0 [Roadmap](./docs/v1-roadmap.md)
@@ -54,6 +55,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   │   ├── __init__.py
 │   │   ├── async_router.py
 │   │   ├── items.py
+│   │   ├── stream.py
 │   │   ├── tasks.py
 │   │   └── users.py
 │   └── helpers
