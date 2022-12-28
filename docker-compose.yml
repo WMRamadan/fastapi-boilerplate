@@ -8,6 +8,14 @@ services:
     ports:
       - 6379:6379
     restart: always
+  
+  api-mongo:
+   container_name: api-mongo
+   image: mongo
+   ports:
+     - 27017:27017
+   volumes:
+     - mongo:/data/db
 
   api-boilerplate:
     container_name: api-boilerplate
@@ -20,6 +28,8 @@ services:
       - api-data:/app/api/data
     depends_on:
      - api-redis
+     - api-mongo
 
 volumes:
   api-data:
+  mongo:
