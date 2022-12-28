@@ -56,6 +56,18 @@ def read_user(user_id: int, db_session: Session = Depends(database.get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
 
+@router.patch("/users/{user_id}", response_model=users_schema.User)
+def update_user(user_id: int, user: users_schema.UserCreate, db_session: Session = Depends(database.get_db)):
+    """
+    Update user by User ID router.
+    :param user_id: The User ID.
+    :param db_session: The database session.
+    """
+    db_user = crud.update_user(db_session, user_id=user_id, user=user)
+    if db_user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    return db_user
+
 @router.delete("/users/{user_id}", response_model=status_schema.Status)
 def delete_user(user_id: int, db_session: Session = Depends(database.get_db)):
     """
