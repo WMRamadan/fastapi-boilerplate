@@ -21,6 +21,18 @@ def get_user(db_session: Session, user_id: int):
     """
     return db_session.query(user_model.User).filter(user_model.User.id == user_id).first()
 
+def delete_user(db_session: Session, user_id: int):
+    """
+    Delete user by User ID helper.
+    :param db_session: The database session.
+    :param user_id: The User ID.
+    """
+    user_obj = get_user(db_session=db_session, user_id=user_id)
+    if user_obj:
+        db_session.delete(user_obj)
+        db_session.commit()
+    return user_obj
+
 
 def get_user_by_email(db_session: Session, email: str):
     """

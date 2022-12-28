@@ -9,7 +9,7 @@ from typing import List
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from api.helpers import crud
-from api.schemas import items_schema, tasks_schema, users_schema
+from api.schemas import items_schema, tasks_schema, users_schema, status_schema
 from .. import database
 
 
@@ -55,6 +55,19 @@ def read_user(user_id: int, db_session: Session = Depends(database.get_db)):
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
+
+@router.delete("/users/{user_id}", response_model=status_schema.Status)
+def delete_user(user_id: int, db_session: Session = Depends(database.get_db)):
+    """
+    Delete user by User ID router.
+    :param user_id: The User ID.
+    :param db_session: The database session.
+    """
+
+    db_user = crud.delete_user(db_session, user_id=user_id)
+    if db_user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    return status_schema.Status(status=f"Deleted user {user_id}")
 
 
 @router.post("/users/{user_id}/items/", response_model=items_schema.Item)
