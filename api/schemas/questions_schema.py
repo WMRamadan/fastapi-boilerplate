@@ -24,6 +24,10 @@ class PydanticObjectId(ObjectId):
             raise TypeError('ObjectId required')
         return str(v)
 
+    @classmethod
+    def __modify_schema__(cls, field_schema):
+        field_schema.update(type="string", example="63ac23ab8c79ddb40f9cad2f")
+
 
 class QuestionBase(BaseModel):
     """
