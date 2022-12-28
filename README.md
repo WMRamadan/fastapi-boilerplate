@@ -28,6 +28,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Tests
 - Config
 - SSE
+- MongoDB
 
 ## ToDo
 - Version 1.0 [Roadmap](./docs/v1-roadmap.md)
@@ -37,6 +38,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 .
 ├── api
 │   ├── __init__.py
+│   ├── collections.py
 │   ├── config.py
 │   ├── database.py
 │   ├── main.py
@@ -49,12 +51,14 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 │   └── schemas
 │   │   ├── __init__.py
 │   │   ├── items_schema.py
+│   │   ├── questions_schema.py
 │   │   └── tasks_schema.py
 │   │   └── users_schema.py
 │   └── routers
 │   │   ├── __init__.py
 │   │   ├── async_router.py
 │   │   ├── items.py
+│   │   ├── questions.py
 │   │   ├── stream.py
 │   │   ├── tasks.py
 │   │   └── users.py
@@ -72,6 +76,8 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 
 ## Environment Variables
 - SQLALCHEMY_DATABASE_URL - Database URL used, can be either SQLite or PostgreSQL.
+- MONGODB_URL - Database URL for MongoDB server.
+- MONGODB_NAME - Name used for MongoDB Database.
 - CELERY_CONF_BROKER_URL - Celery redis broker URL.
 - CELERY_CONF_RESULT_BACKEND - Celery redis result backend.
 - ALLOWED_ORIGINS - A list of origins that should be permitted to make cross-origin requests.

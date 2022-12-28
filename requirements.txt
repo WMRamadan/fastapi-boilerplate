@@ -9,3 +9,4 @@ pytest==7.2.0
 httpx==0.23.1
 sse-starlette==1.2.1
 asyncio==3.4.3
+pymongo==4.3.3

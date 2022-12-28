@@ -7,8 +7,9 @@
 #--------------------------------------------#
 from typing import List
 from sqlalchemy.orm import Session
+from api.collections import questions_collection
 from api.models import user_model, item_model, task_model
-from api.schemas import items_schema, tasks_schema, users_schema
+from api.schemas import items_schema, tasks_schema, users_schema, questions_schema
 from api.worker import celery, run_task
 
 
@@ -113,3 +114,24 @@ def get_task(task_id: str):
         "task_result": task_result.result
     }
     return result
+
+def get_questions(skip: int = 0, limit: int = 10):
+    """
+    Get all questions helper.
+    :param skip: The offset used when paging.
+    :param limit: The number of items to retrieve per query.
+    """
+    questions = []
+    question_results = questions_collection.collection.find().limit(limit).skip(skip)
+    for question in question_results:
+        questions.append(question)
+    return questions
+
+def create_question(question: questions_schema.QuestionBase):
+    """
+    Create question helper.
+    :question: The question schema.
+    """
+    insert_res = questions_collection.collection.insert_one(question.dict(exclude_none=True))
+    new_question = questions_collection.collection.find_one({'_id': insert_res.inserted_id})
+    return new_question

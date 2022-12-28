@@ -10,7 +10,7 @@ from functools import lru_cache
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
-from api.routers import async_router, users, items, tasks, stream
+from api.routers import async_router, users, items, tasks, stream, questions
 from . import database, config
 
 database.Base.metadata.create_all(bind=database.engine)
@@ -38,6 +38,7 @@ app.include_router(users.router)
 app.include_router(items.router)
 app.include_router(tasks.router)
 app.include_router(stream.router)
+app.include_router(questions.router)
 
 logger.add("log_api.log", rotation="100 MB")    # Automatically rotate log file
 

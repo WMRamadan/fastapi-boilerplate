@@ -14,6 +14,8 @@ class Settings(BaseSettings):
     Settings class.
     """
     SQLALCHEMY_DATABASE_URL: str
+    MONGODB_URL: str
+    MONGODB_NAME: str
     CELERY_CONF_BROKER_URL: str
     CELERY_CONF_RESULT_BACKEND: str
     ALLOWED_ORIGINS: List[str]

@@ -8,3 +8,14 @@ services:
    ports:
      - 6379:6379
    restart: always
+
+  api-mongo:
+   container_name: api-mongo
+   image: mongo
+   ports:
+     - 27017:27017
+   volumes:
+     - mongo:/data/db
+
+volumes:
+  mongo:
