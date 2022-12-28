@@ -93,6 +93,20 @@ db_session: Session = Depends(database.get_db)):
     """
     return crud.create_user_item(db_session=db_session, item=item, user_id=user_id)
 
+@router.delete("/users/{user_id}/items/{item_id}", response_model=status_schema.Status)
+def delete_item_for_user(user_id: int, item_id: int,
+db_session: Session = Depends(database.get_db)):
+    """
+    Delete the user item router.
+    :param user_id: The ID of the user.
+    :param item_id: The ID of the item.
+    :param db_session: The database session.
+    """
+    db_item = crud.delete_user_item(db_session=db_session, item_id=item_id, user_id=user_id)
+    if db_item is None:
+        raise HTTPException(status_code=404, detail="Item not found")
+    return status_schema.Status(status=f"Deleted Item {item_id} for user {user_id}")
+
 @router.post("/users/{user_id}/tasks/", response_model=tasks_schema.Task)
 def create_task_for_user(user_id: int, task: tasks_schema.TaskCreate,
 db_session: Session = Depends(database.get_db)):

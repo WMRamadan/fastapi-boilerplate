@@ -103,6 +103,19 @@ def create_user_item(db_session: Session, item: items_schema.ItemCreate, user_id
     db_session.refresh(db_item)
     return db_item
 
+def delete_user_item(db_session: Session, item_id: int, user_id: int):
+    """
+    Delete the user item helper.
+    :param db_session: The database session.
+    :param item_id: The item ID to be deleted.
+    :param user_id: The User ID of the item to be deleted.
+    """
+    db_item = db_session.query(item_model.Item).filter(item_model.Item.id == item_id, item_model.Item.owner_id == user_id).first()
+    if db_item:
+        db_session.delete(db_item)
+        db_session.commit()
+    return db_item
+
 
 def create_user_task(db_session: Session, task: tasks_schema.TaskCreate, user_id: int):
     """
