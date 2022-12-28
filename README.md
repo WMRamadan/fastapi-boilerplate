@@ -28,7 +28,7 @@ FastAPI REST API pre-configured with a database. This will get you up and runnin
 - Tests
 - Config
 - SSE
-- MongoDB
+- PyMongo
 
 ## ToDo
 - Version 1.0 [Roadmap](./docs/v1-roadmap.md)
