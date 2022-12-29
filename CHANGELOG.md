@@ -3,6 +3,21 @@ CHANGELOG
 
 [Current]
 
+[0.1.0]
+ * version 0.1.0
+ * add delete item
+ * add update user patch method
+ * fix questions schema
+ * add delete user
+ * update README features
+ * add mongo db to docker-compose
+ * feature: add mongodb
+ * 8 add sse support (#9)
+ * update: requirements package versions (#7)
+ * update python-app workflow docstring
+ * docs: README changelog updates
+ * update: add changelog
+
 [0.0.1]
  * docs: update
  * docs: update
