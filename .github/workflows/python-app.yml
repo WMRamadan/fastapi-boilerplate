@@ -35,3 +35,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest api/
+    - name: Changelog Action
+      uses: TriPSs/conventional-changelog-action@v3
+      with:
+        github-token: ${{ secrets.REPO_TOKEN }}
