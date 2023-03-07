@@ -36,6 +36,9 @@ jobs:
       run: |
         pytest api/
     - name: Changelog Action
-      uses: TriPSs/conventional-changelog-action@v3
+      uses: saadmk11/changelog-ci@v1.1.1
       with:
+        changelog_filename: CHANGELOG.md
+        committer_username: 'Wael Ramadan'
+        committer_email: 'thebigguyis@gmail.com'
         github-token: ${{ secrets.REPO_TOKEN }}
