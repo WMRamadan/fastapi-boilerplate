@@ -35,3 +35,15 @@ jobs:
     - name: Test with pytest
       run: |
         pytest api/
+
+jobs:
+  tag-new-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - uses: salsify/action-detect-and-tag-new-version@v2
+        with:
+          version-command: |
+            cat VERSION
