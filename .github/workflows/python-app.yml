@@ -11,7 +11,7 @@ on:
 
 permissions:
   contents: read
-  actions: read|write
+  actions: write
 
 jobs:
   build:
