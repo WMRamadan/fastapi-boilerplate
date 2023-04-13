@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_TOKEN }}
           fetch-depth: 2
       - uses: salsify/action-detect-and-tag-new-version@v2
         with:
