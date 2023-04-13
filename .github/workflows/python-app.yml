@@ -44,5 +44,6 @@ jobs:
           fetch-depth: 2
       - uses: salsify/action-detect-and-tag-new-version@v2
         with:
+          github_token: ${{ secrets.REPO_TOKEN }}
           version-command: |
             cat VERSION
