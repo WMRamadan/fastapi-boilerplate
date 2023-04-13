@@ -36,7 +36,6 @@ jobs:
       run: |
         pytest api/
 
-jobs:
   tag-new-versions:
     runs-on: ubuntu-latest
     steps:
