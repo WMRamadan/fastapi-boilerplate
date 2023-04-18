@@ -62,13 +62,13 @@ jobs:
     needs: [tag-new-versions]
     steps:
       - name: Get repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.REPO_TOKEN }}
           fetch-depth: 0
       - name: Update CHANGELOG
         run: |
-          git fetch --depth=0 --tags
+          git fetch --prune --unshallow --tags
           rm CHANGELOG.md
           bash git-changelog.sh > CHANGELOG.md
       - name: commit CHANGELOG
