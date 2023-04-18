@@ -47,8 +47,8 @@ jobs:
           token: ${{ secrets.REPO_TOKEN }}
           fetch-depth: 2
       - name: Apply tag
-        id: repo-tag
       - uses: salsify/action-detect-and-tag-new-version@v2
+        id: repo-tag
         with:
           version-command: |
             cat VERSION
