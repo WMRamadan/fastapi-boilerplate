@@ -2,6 +2,9 @@ CHANGELOG
 ----------------------
 
 [Current]
+ * update version 0.2.23
+ * pull request head
+ * Automatic CHANGELOG Update [skip ci]
  * update version 0.2.22
  * try fetch without unshallow
  * update version 0.2.21
@@ -62,6 +65,11 @@ CHANGELOG
  * apply change log in github-action
 
 [v0.2.3]
+
+[v0.2.23]
+ * update version 0.2.23
+ * pull request head
+ * Automatic CHANGELOG Update [skip ci]
 
 [v0.2.22]
  * update version 0.2.22
