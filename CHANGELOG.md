@@ -2,6 +2,7 @@ CHANGELOG
 ----------------------
 
 [Current]
+ * Automatic CHANGELOG Update
  * update version 0.2.13
  * add new job for changelog
  * Apply automatic changes
