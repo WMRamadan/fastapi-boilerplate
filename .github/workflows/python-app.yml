@@ -55,4 +55,4 @@ jobs:
       - name: Get the tag output
         if: ${{ steps.repo-tag.outputs.tag }}
         run: |
-          echo '${{ steps.repo-tag.outputs.tag }}'
+          bash git-changelog.sh > CHANGELOG.md
