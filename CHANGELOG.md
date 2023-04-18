@@ -2,6 +2,9 @@ CHANGELOG
 ----------------------
 
 [Current]
+ * update version 0.2.16
+ * fetch all tags
+ * Automatic CHANGELOG Update
  * update version 0.2.15
  * update changelog step
  * update version 0.2.14
