@@ -2,6 +2,13 @@ CHANGELOG
 ----------------------
 
 [Current]
+ * update version 0.2.19
+ * update commit message for commit changelog
+ * update version 0.2.18
+ * update if commit changelog
+ * update version 0.2.17
+ * run only if tag
+ * Automatic CHANGELOG Update
  * Automatic CHANGELOG Update
  * Automatic CHANGELOG Update
  * Automatic CHANGELOG Update
@@ -52,6 +59,20 @@ CHANGELOG
  * add github action if run
 
 [v0.2.2]
+
+[v0.2.19]
+ * update version 0.2.19
+ * update commit message for commit changelog
+
+[v0.2.18]
+ * update version 0.2.18
+ * update if commit changelog
+ * update version 0.2.17
+ * run only if tag
+ * Automatic CHANGELOG Update
+ * Automatic CHANGELOG Update
+ * Automatic CHANGELOG Update
+ * Automatic CHANGELOG Update
 
 [v0.2.16]
  * update version 0.2.16
