@@ -42,7 +42,7 @@ jobs:
     needs: [build]
     steps:
       - name: Get repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.REPO_TOKEN }}
           fetch-depth: 2
@@ -68,8 +68,8 @@ jobs:
           fetch-depth: 0
       - name: Update CHANGELOG
         run: |
+          git fetch --tags
           rm CHANGELOG.md
-          git pull origin main
           bash git-changelog.sh > CHANGELOG.md
       - name: commit CHANGELOG
         uses: stefanzweifel/git-auto-commit-action@v4
