@@ -53,5 +53,6 @@ jobs:
           version-command: |
             cat VERSION
       - name: Get the tag output
+        if: ${{ steps.repo-tag.outputs.tag }}
         run: |
           echo '${{ steps.repo-tag.outputs.tag }}'
