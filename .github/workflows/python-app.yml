@@ -73,7 +73,6 @@ jobs:
           bash git-changelog.sh > CHANGELOG.md
       - name: commit CHANGELOG
         uses: stefanzweifel/git-auto-commit-action@v4
-        if: ${{ needs.tag-new-versions.steps.repo-tag.outputs.tag }}
         with:
           branch: main
-          commit_message: Automatic CHANGELOG Update
+          commit_message: Automatic CHANGELOG Update [skip ci]
