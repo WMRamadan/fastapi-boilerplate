@@ -54,4 +54,11 @@ jobs:
             cat VERSION
       - name: Update CHANGELOG
         if: ${{ steps.repo-tag.outputs.tag }}
-        uses: dangoslen/changelog-enforcer@v3
+        run: |
+          rm CHANGELOG.md
+          bash git-changelog.sh > CHANGELOG.md
+          git config --global user.name "github-actions"
+          git config --global user.email "github@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "Update CHANGELOG"
+          git push
