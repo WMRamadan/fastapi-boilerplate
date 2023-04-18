@@ -66,9 +66,9 @@ jobs:
         with:
           token: ${{ secrets.REPO_TOKEN }}
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Update CHANGELOG
         run: |
-          git fetch --prune --tags
           rm CHANGELOG.md
           bash git-changelog.sh > CHANGELOG.md
       - name: commit CHANGELOG
