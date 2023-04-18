@@ -68,7 +68,7 @@ jobs:
           fetch-depth: 0
       - name: Update CHANGELOG
         run: |
-          git fetch --prune --unshallow --tags
+          git fetch --prune --tags
           rm CHANGELOG.md
           bash git-changelog.sh > CHANGELOG.md
       - name: commit CHANGELOG
