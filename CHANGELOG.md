@@ -2,6 +2,62 @@ CHANGELOG
 ----------------------
 
 [Current]
+ * revert get tag output step
+
+[v0.2.6]
+ * update version 0.2.6
+ * update changelog step
+
+[v0.2.5]
+ * update version 0.2.5
+ * update comit to changelog step
+
+[v0.2.4]
+ * update version 0.2.4
+ * apply change log in github-action
+
+[v0.2.3]
+ * update version 0.2.3
+ * add github action if run
+
+[v0.2.2]
+ * update tag 0.2.2
+ * update tag
+ * fix: github-action structure
+ * fix: github-action
+ * feat: output tag
+
+[v0.2.1]
+ * update version 0.2.1
+ * test retag
+ * test retag
+ * set github_token
+ * set version 0.2.0
+ * use github token
+ * revert version
+ * tag version depends on build
+
+[v0.2.0]
+
+[v0.1.0]
+ * revert version
+ * tag version depends on build
+ * version update
+ * change token setting
+ * revert version
+ * add version
+ * add token to actions
+ * check previous version
+ * fix workflow permissions
+ * update workflow permissions
+ * use secrets in workflow
+ * update version 0.2.0
+ * fix workflow yaml
+ * add tag new versions in workflow
+ * update: remove changelog action
+ * update: changelog workflow
+ * update: github-actions automated changelog
+ * update: CHANGELOG
 
 [0.1.0]
  * version 0.1.0
