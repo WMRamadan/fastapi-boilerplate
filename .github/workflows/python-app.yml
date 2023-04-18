@@ -41,11 +41,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
+      - name: Get repo
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_TOKEN }}
           fetch-depth: 2
+      - name: Apply tag
+        id: repo-tag
       - uses: salsify/action-detect-and-tag-new-version@v2
         with:
           version-command: |
             cat VERSION
+      - name: Get the tag output
+        run: |
+          echo '${{ steps.repo-tag.outputs.tag }}'
