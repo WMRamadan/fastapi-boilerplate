@@ -2,69 +2,11 @@ CHANGELOG
 ----------------------
 
 [Current]
- * update version 0.2.23
- * pull request head
+
+[v0.2.24]
+ * update version 0.2.24
+ * update sorting
  * Automatic CHANGELOG Update [skip ci]
- * update version 0.2.22
- * try fetch without unshallow
- * update version 0.2.21
- * update fetch for update changelog
- * update version 0.2.20
- * add fetch depth
- * Automatic CHANGELOG Update [skip ci]
- * update version 0.2.19
- * update commit message for commit changelog
- * update version 0.2.18
- * update if commit changelog
- * update version 0.2.17
- * run only if tag
- * Automatic CHANGELOG Update
- * Automatic CHANGELOG Update
- * Automatic CHANGELOG Update
- * Automatic CHANGELOG Update
- * update version 0.2.16
- * fetch all tags
- * Automatic CHANGELOG Update
- * update version 0.2.15
- * update changelog step
- * update version 0.2.14
- * update history
- * Automatic CHANGELOG Update
- * Automatic CHANGELOG Update
- * update version 0.2.13
- * add new job for changelog
- * Apply automatic changes
- * update version 0.2.12
- * add branch in changelog step
- * update version 0.2.11
- * add comit changelog
- * update version 0.2.10
- * update changelog step
-
-[v0.2.9]
- * update version 0.2.9 (#13)
-
-[v0.2.8]
- * update version 0.2.8
- * update changelog step
- * update version 0.2.7
- * update changelog step
- * update changelog
- * revert get tag output step
-
-[v0.2.6]
- * update version 0.2.6
- * update changelog step
-
-[v0.2.5]
- * update version 0.2.5
- * update comit to changelog step
-
-[v0.2.4]
- * update version 0.2.4
- * apply change log in github-action
-
-[v0.2.3]
 
 [v0.2.23]
  * update version 0.2.23
@@ -83,51 +25,6 @@ CHANGELOG
  * update version 0.2.20
  * add fetch depth
  * Automatic CHANGELOG Update [skip ci]
- * update version 0.2.19
- * update commit message for commit changelog
- * update version 0.2.18
- * update if commit changelog
- * update version 0.2.17
- * run only if tag
- * Automatic CHANGELOG Update
- * Automatic CHANGELOG Update
- * Automatic CHANGELOG Update
- * Automatic CHANGELOG Update
- * update version 0.2.16
- * fetch all tags
- * Automatic CHANGELOG Update
- * update version 0.2.15
- * update changelog step
- * update version 0.2.14
- * update history
- * Automatic CHANGELOG Update
- * Automatic CHANGELOG Update
- * update version 0.2.13
- * add new job for changelog
- * Apply automatic changes
- * update version 0.2.12
- * add branch in changelog step
- * update version 0.2.11
- * add comit changelog
- * update version 0.2.10
- * update changelog step
- * update version 0.2.9 (#13)
- * update version 0.2.8
- * update changelog step
- * update version 0.2.7
- * update changelog step
- * update changelog
- * revert get tag output step
- * update version 0.2.6
- * update changelog step
- * update version 0.2.5
- * update comit to changelog step
- * update version 0.2.4
- * apply change log in github-action
- * update version 0.2.3
- * add github action if run
-
-[v0.2.2]
 
 [v0.2.19]
  * update version 0.2.19
@@ -170,21 +67,35 @@ CHANGELOG
 [v0.2.10]
  * update version 0.2.10
  * update changelog step
+
+[v0.2.9]
  * update version 0.2.9 (#13)
+
+[v0.2.8]
  * update version 0.2.8
  * update changelog step
  * update version 0.2.7
  * update changelog step
  * update changelog
  * revert get tag output step
+
+[v0.2.6]
  * update version 0.2.6
  * update changelog step
+
+[v0.2.5]
  * update version 0.2.5
  * update comit to changelog step
+
+[v0.2.4]
  * update version 0.2.4
  * apply change log in github-action
+
+[v0.2.3]
  * update version 0.2.3
  * add github action if run
+
+[v0.2.2]
  * update tag 0.2.2
  * update tag
  * fix: github-action structure
