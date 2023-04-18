@@ -2,6 +2,7 @@ CHANGELOG
 ----------------------
 
 [Current]
+ * Automatic CHANGELOG Update
  * update version 0.2.16
  * fetch all tags
  * Automatic CHANGELOG Update
@@ -49,6 +50,11 @@ CHANGELOG
  * add github action if run
 
 [v0.2.2]
+
+[v0.2.16]
+ * update version 0.2.16
+ * fetch all tags
+ * Automatic CHANGELOG Update
 
 [v0.2.15]
  * update version 0.2.15
