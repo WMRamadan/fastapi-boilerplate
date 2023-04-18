@@ -2,6 +2,11 @@ CHANGELOG
 ----------------------
 
 [Current]
+ * update version 0.2.15
+ * update changelog step
+ * update version 0.2.14
+ * update history
+ * Automatic CHANGELOG Update
  * Automatic CHANGELOG Update
  * update version 0.2.13
  * add new job for changelog
@@ -41,6 +46,17 @@ CHANGELOG
  * add github action if run
 
 [v0.2.2]
+
+[v0.2.15]
+ * update version 0.2.15
+ * update changelog step
+ * update version 0.2.14
+ * update history
+ * Automatic CHANGELOG Update
+ * Automatic CHANGELOG Update
+ * update version 0.2.13
+ * add new job for changelog
+ * Apply automatic changes
 
 [v0.2.12]
  * update version 0.2.12
