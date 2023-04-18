@@ -2,7 +2,7 @@
 # Author:Andrey Nikishaev
 echo "CHANGELOG"
 echo ----------------------
-git tag -l | sort -u -r | while read TAG ; do
+git tag -l | sort -V -r | while read TAG ; do
     echo
     if [ $NEXT ];then
         echo [$NEXT]
