@@ -3,6 +3,7 @@ CHANGELOG
 
 [Current]
  * Automatic CHANGELOG Update
+ * Automatic CHANGELOG Update
  * update version 0.2.16
  * fetch all tags
  * Automatic CHANGELOG Update
