@@ -53,7 +53,5 @@ jobs:
           version-command: |
             cat VERSION
       - name: Update CHANGELOG
-        uses: dangoslen/changelog-enforcer@v3
         if: ${{ steps.repo-tag.outputs.tag }}
-        run: |
-          echo '${{ steps.repo-tag.outputs.tag }}'
+        uses: dangoslen/changelog-enforcer@v3
