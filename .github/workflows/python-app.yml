@@ -52,7 +52,10 @@ jobs:
         with:
           version-command: |
             cat VERSION
-      - name: Get the tag output
+      - name: Commit CHANGELOG.md
         if: ${{ steps.repo-tag.outputs.tag }}
-        run: |
-          bash git-changelog.sh > CHANGELOG.md
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: main
+          commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
+          file_pattern: CHANGELOG.md
