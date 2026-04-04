@@ -64,7 +64,7 @@ jobs:
       - name: Get repo
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.REPO_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Update CHANGELOG
