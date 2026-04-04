@@ -61,7 +61,6 @@ jobs:
           echo "Created tag ${{ steps.repo-tag.outputs.tag }}"
 
   update-changelog:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: [tag-new-versions]
     steps:
@@ -77,6 +76,15 @@ jobs:
       - name: commit CHANGELOG
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          branch: main
+          branch: changelog-update
           commit_message: Automatic CHANGELOG Update [skip ci]
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Changelog PR
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: changelog-update
+          base: main
+          title: "Update CHANGELOG"
+          body: "This PR updates the CHANGELOG after a new release"
+          commit-message: "Automatic CHANGELOG Update [skip ci]"
