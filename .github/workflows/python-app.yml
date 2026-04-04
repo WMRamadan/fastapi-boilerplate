@@ -38,13 +38,14 @@ jobs:
         pytest api/
 
   tag-new-versions:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: [build]
     steps:
       - name: Get repo
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.REPO_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 2
       - name: Apply tag
         uses: salsify/action-detect-and-tag-new-version@v2
@@ -64,7 +65,7 @@ jobs:
       - name: Get repo
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.REPO_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Update CHANGELOG

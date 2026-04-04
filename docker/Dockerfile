@@ -1,18 +1,26 @@
-FROM python:3.8-slim-buster
+FROM python:3.11-slim
 
-# Update
-RUN apt-get -y update
-
-# Upgrade
-RUN apt-get -y upgrade
-
-# Install packages
-RUN apt-get -y install python3-pip
+# Prevent Python from writing pyc files & buffering stdout
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-COPY . /app
+# Install system dependencies (only if needed)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+# Install dependencies first (better caching)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "80"]
+# Copy app code
+COPY . .
+
+# Create non-root user
+RUN useradd -m appuser
+USER appuser
+
+# Run app
+CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "80", "--workers", "2"]
