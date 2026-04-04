@@ -92,6 +92,26 @@ You can run `git-changelog.sh` bash script to update the [CHANGELOG](./CHANGELOG
 bash git-changelog.sh > CHANGELOG.md
 ```
 
+## To Build Docker Image
+```bash
+# Multiarch Builder
+docker buildx create --name multiarch-builder --driver docker-container --use
+
+# Build
+docker buildx build --platform linux/amd64,linux/arm64 -t fastapi-boilerplate:v<version> -f ./docker/Dockerfile .
+
+# Tag
+docker tag fastapi-boilerplate:v<version> ghcr.io/wmramadan/fastapi-boilerplate:v<version>
+docker tag fastapi-boilerplate:v<version> ghcr.io/wmramadan/fastapi-boilerplate:latest
+
+# Login
+echo $GITHUB_TOKEN | docker login ghcr.io -u wmramadan --password-stdin
+
+# Push
+docker push ghcr.io/wmramadan/fastapi-boilerplate:v<version>
+docker push ghcr.io/wmramadan/fastapi-boilerplate:latest
+```
+
 ## Linting
 You can run `pylint` with the following command inside the `fastapi-boilerplate` directory:
 ```bash
