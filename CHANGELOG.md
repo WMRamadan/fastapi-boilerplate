@@ -2,6 +2,13 @@ CHANGELOG
 ----------------------
 
 [Current]
+ * refactor: changelog github action (#17)
+
+[v0.2.25]
+ * update: version
+ * refactor: github actions yml (#16)
+ * fix: dockerfile (#15)
+ * Automatic CHANGELOG Update [skip ci]
 
 [v0.2.24]
  * update version 0.2.24
