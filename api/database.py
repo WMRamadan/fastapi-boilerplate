@@ -5,7 +5,6 @@
 # 2.Related Library Imports
 # 3.Local application/library imports
 #--------------------------------------------#
-import os
 from functools import lru_cache
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
