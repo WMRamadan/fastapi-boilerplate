@@ -30,17 +30,11 @@ MONGODB_NAME = conf_settings.MONGODB_NAME
 
 mongodb_client = MongoClient(MONGODB_URL)
 
-if SQLALCHEMY_DATABASE_URL:
-    os.makedirs("/app/api/data", exist_ok=True)
-    engine = create_engine(
-        SQLALCHEMY_DATABASE_URL,
-        connect_args={"check_same_thread": False}
-    )
-    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-else:
-    engine = None
-    SessionLocal = None
-    
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
 Base = declarative_base()
 
 # Dependency
