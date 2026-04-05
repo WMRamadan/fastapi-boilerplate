@@ -5,6 +5,7 @@
 # 2.Related Library Imports
 # 3.Local application/library imports
 #--------------------------------------------#
+import os
 from functools import lru_cache
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -29,11 +30,17 @@ MONGODB_NAME = conf_settings.MONGODB_NAME
 
 mongodb_client = MongoClient(MONGODB_URL)
 
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
+if SQLALCHEMY_DATABASE_URL:
+    os.makedirs("/app/api/data", exist_ok=True)
+    engine = create_engine(
+        SQLALCHEMY_DATABASE_URL,
+        connect_args={"check_same_thread": False}
+    )
+    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+else:
+    engine = None
+    SessionLocal = None
+    
 Base = declarative_base()
 
 # Dependency
