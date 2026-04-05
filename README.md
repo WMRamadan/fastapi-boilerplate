@@ -97,6 +97,9 @@ bash git-changelog.sh > CHANGELOG.md
 # Multiarch Builder
 docker buildx create --name multiarch-builder --driver docker-container --use
 
+# If multiarch-builder was previously created then you might need to make sure you use it
+docker buildx use multiarch-builder
+
 # Login
 echo $GITHUB_TOKEN | docker login ghcr.io -u wmramadan --password-stdin
 
@@ -136,7 +139,7 @@ pytest api/
 
 4. Run `redis` service required for celery worker:
     ```bash
-    docker-compose -f docker-compose-services.yml up -d
+    docker compose -f docker-compose-services.yml up -d
     ```
 
 5. Run `celery` worker:
@@ -149,11 +152,11 @@ pytest api/
     uvicorn api.main:app --reload
     ```
 
-7. View the API docs:
+7. View the API docs or health end-point:
     ```bash
     http://localhost:8000/docs
     # OR
-    http://localhost:8000/redoc
+    http://localhost:8000/health
     ```
 
 ## Dev Quick Start (Docker)
@@ -165,14 +168,14 @@ pytest api/
 
 2. Build & Run:
     ```bash
-    docker-compose -f docker-compose-dev.yml up --build
+    docker compose -f docker-compose-dev.yml up --build
     ```
 
-3. View the API docs:
+3. View the API docs or health end-point:
     ```bash
     http://localhost/docs
     # OR
-    http://localhost/redoc
+    http://localhost/health
     ```
 
 ## Prod Quick Start (Docker)
@@ -187,16 +190,16 @@ pytest api/
     cp .env.dev .env
     ```
 
-2. Build & Run:
+3. Run:
     ```bash
-    docker-compose up
+    docker compose up
     ```
 
-3. View the API docs:
+4. View the API docs or health end-point:
     ```bash
     http://localhost/docs
     # OR
-    http://localhost/redoc
+    http://localhost/health
     ```
 
 ## Contribution
