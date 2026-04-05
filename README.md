@@ -6,7 +6,7 @@
     <img src="https://github.com/wmramadan/fastapi-boilerplate/actions/workflows/python-app.yml/badge.svg" alt="Test">
     </a>
     <img src="https://img.shields.io/badge/platforms-Windows%20%7C%20Mac%20%7C%20Linux-orange" alt="Supported Platforms">
-    <img src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue" alt="Supported Python versions">
+    <img src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue" alt="Supported Python versions">
 </p>
 
 # FastAPI Boilerplate
