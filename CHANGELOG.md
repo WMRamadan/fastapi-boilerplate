@@ -2,6 +2,12 @@ CHANGELOG
 ----------------------
 
 [Current]
+
+[v0.2.26]
+ * feat: v0.2.26
+ * fix: dockerfile for production (#18)
+ * docs: add Docker Image Build to README
+ * update: Changelog
  * refactor: changelog github action (#17)
 
 [v0.2.25]
