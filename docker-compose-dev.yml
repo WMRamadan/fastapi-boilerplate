@@ -27,7 +27,7 @@ services:
     volumes:
       - api-data:/app/api/data
     env_file:
-    - .env.example
+    - .env.dev
     depends_on:
      - api-redis
      - api-mongo
