@@ -13,8 +13,6 @@ from loguru import logger
 from api.routers import async_router, users, items, tasks, stream, questions
 from . import database, config
 
-database.Base.metadata.create_all(bind=database.engine)
-
 @lru_cache()
 def get_settings():
     """
@@ -25,6 +23,11 @@ def get_settings():
 conf_settings = get_settings()
 
 app = FastAPI(debug=conf_settings.APP_DEBUG)
+
+@app.on_event("startup")
+def startup():
+    # This runs only when the app starts, not on import
+    database.Base.metadata.create_all(bind=database.engine)
 
 app.add_middleware(
     CORSMiddleware,

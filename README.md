@@ -124,7 +124,7 @@ pytest api/
     ```
 2. Initialize and activate a virtual environment:
     ```bash
-    virtualenv env
+    python3.12 -m venv env
     source env/bin/activate
     ```
 
