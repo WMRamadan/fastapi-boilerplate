@@ -116,7 +116,7 @@ You can run `pytest` with the following command inside the `fastapi-boilerplate`
 pytest api/
 ```
 
-## Quick Start (Local)
+## Dev Quick Start (Local)
 1. Clone the repo:
     ```bash
     git clone https://github.com/WMRamadan/fastapi-boilerplate
@@ -135,7 +135,7 @@ pytest api/
 
 4. Run `redis` service required for celery worker:
     ```bash
-    docker-compose -f docker-compose-services.yml up -d
+    docker-compose -f docker-compose-services-dev.yml up -d
     ```
 
 5. Run `celery` worker:
