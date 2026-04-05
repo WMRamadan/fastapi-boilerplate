@@ -19,13 +19,15 @@ services:
 
   api-boilerplate:
     container_name: api-boilerplate
-    image: ghcr.io/wmramadan/fastapi-boilerplate:latest
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
     ports:
       - 80:80
     volumes:
       - api-data:/app/api/data
     env_file:
-    - .env
+    - .env.example
     depends_on:
      - api-redis
      - api-mongo
