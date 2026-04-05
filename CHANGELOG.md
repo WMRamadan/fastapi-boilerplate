@@ -3,6 +3,21 @@ CHANGELOG
 
 [Current]
 
+[v0.2.27]
+ * feat: v0.2.27
+ * doc: update README quick start
+ * fix: pytest fix
+ * fix: remove unused impoarts from database.py
+ * feat: add .env.dev file
+ * fix: revert hardcoded db directory
+ * docs: update README
+ * feat: add dev and prod docker compose
+ * fix: ensure app directory is created
+ * fix: ensure sqlite db directory
+ * fix: example env update
+ * doc: update README docker image build and push
+ * doc: update CHANGELOG
+
 [v0.2.26]
  * feat: v0.2.26
  * fix: dockerfile for production (#18)
