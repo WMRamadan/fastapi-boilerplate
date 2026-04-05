@@ -122,6 +122,7 @@ pytest api/
     git clone https://github.com/WMRamadan/fastapi-boilerplate
     cd fastapi-boilerplate
     ```
+
 2. Initialize and activate a virtual environment:
     ```bash
     python3.12 -m venv env
@@ -135,7 +136,7 @@ pytest api/
 
 4. Run `redis` service required for celery worker:
     ```bash
-    docker-compose -f docker-compose-services-dev.yml up -d
+    docker-compose -f docker-compose-services.yml up -d
     ```
 
 5. Run `celery` worker:
@@ -155,23 +156,43 @@ pytest api/
     http://localhost:8000/redoc
     ```
 
-## Quick Start (Docker)
+## Dev Quick Start (Docker)
 1. Clone the repo:
     ```bash
     git clone https://github.com/WMRamadan/fastapi-boilerplate
     cd fastapi-boilerplate
     ```
-2. Build:
+
+2. Build & Run:
     ```bash
-    docker-compose build
+    docker-compose -f docker-compose-dev.yml up --build
     ```
 
-3. Run the app:
+3. View the API docs:
+    ```bash
+    http://localhost/docs
+    # OR
+    http://localhost/redoc
+    ```
+
+## Prod Quick Start (Docker)
+1. Clone the repo:
+    ```bash
+    git clone https://github.com/WMRamadan/fastapi-boilerplate
+    cd fastapi-boilerplate
+    ```
+
+2. Copy and update env file:
+    ```bash
+    cp .env.dev .env
+    ```
+
+2. Build & Run:
     ```bash
     docker-compose up
     ```
 
-4. View the API docs:
+3. View the API docs:
     ```bash
     http://localhost/docs
     # OR
