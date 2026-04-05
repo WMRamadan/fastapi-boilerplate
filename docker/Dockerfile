@@ -1,7 +1,7 @@
 # -----------------------------
 # 1. Base image
 # -----------------------------
-FROM python:3.14-slim AS base
+FROM python:3.12-slim AS base
 
 # Prevent Python from writing pyc files & buffering logs
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -27,7 +27,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # -----------------------------
 # 3. Runtime stage
 # -----------------------------
-FROM python:3.14-slim AS runner
+FROM python:3.12-slim AS runner
 
 WORKDIR /app
 
