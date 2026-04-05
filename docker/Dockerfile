@@ -39,6 +39,12 @@ COPY . .
 
 # Create non-root user
 RUN useradd -m appuser
+
+# Create required directories with correct permissions
+RUN mkdir -p /app/api/data && \
+    chown -R appuser:appuser /app
+
+# Switch to non-root user
 USER appuser
 
 # Expose port
@@ -51,4 +57,4 @@ HEALTHCHECK CMD curl -f http://localhost:80/health || exit 1
 ENTRYPOINT ["uvicorn"]
 
 # Run app
-CMD ["api.main:app", "--host", "0.0.0.0", "--port", "80", "--workers", "2"]
+CMD ["api.main:app", "--host", "0.0.0.0", "--port", "80", "--workers", "1"]
