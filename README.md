@@ -7,6 +7,9 @@
     </a>
     <img src="https://img.shields.io/badge/platforms-Windows%20%7C%20Mac%20%7C%20Linux-orange" alt="Supported Platforms">
     <img src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue" alt="Supported Python versions">
+    <a href="https://hub.docker.com/r/wmramadan/fastapi-boilerplate/tags" target="_blank">
+    <img src="https://img.shields.io/docker/pulls/wmramadan/fastapi-boilerplate" alt="Docker Hub">
+    </a>
 </p>
 
 # FastAPI Boilerplate
